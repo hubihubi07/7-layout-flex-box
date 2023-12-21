@@ -1,98 +1,130 @@
-.header,
-.aside,
-.footer,
-.left-aside,
-.right-aside {
-    position: fixed;
-    color: white;
-    text-align: center;
-    font-size: 3em;
+body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    box-sizing: border-box;
+    margin: 0;
 }
 
-.aside,
+div {
+    color: aliceblue;
+    text-align: center;
+    font-size: 3em;
+    text-transform: uppercase;
+
+}
+
+.header,
+.footer {
+    flex-basis: 100%;
+    height: 100px;
+    line-height: 100px;
+}
+
 .left-aside,
 .right-aside {
-    bottom: 80px;
-    top: 80px;
+    flex-basis: 20%;
+}
+
+.left-aside,
+.center-aside,
+.right-aside {
+    height: 719px;
+}
+
+.header {
+    background-color: rgb(255, 38, 0)
 }
 
 .left-aside {
     background-color: green;
-    width: 20%;
-    left: 0%;
 }
 
-.header {
-    top: 0%;
-    background-color: orangered;
-    width: 100%;
-    height: 80px;
-    left: 0%;
-}
-
-.footer {
-    bottom: 0%;
-    background-color: darkviolet;
-    width: 100%;
-    height: 80px;
-    left: 0%;
+.center-aside {
+    flex-basis: 60%;
+    background-color: rgb(0, 224, 224);
 }
 
 .right-aside {
-    background-color: salmon;
-    width: 20%;
-    right: 0%;
+    background-color: pink;
 }
 
+.footer {
+    background-color: blueviolet;
 
-
-.aside {
-    background-color: skyblue;
-    left: 20%;
-    right: 20%;
 }
 
 @media (min-width:768px) and (max-width:992px) {
-    .left-aside {
-        width: 100%;
-        top: 466px;
-        height: 385px;
+    body {
+        flex-wrap: wrap;
     }
 
-    .aside {
-        left: 0%;
-        width: 80%;
-        height: 386px;
-        bottom: 465px;
-        font-size: 2em;
+    div {
+        font-size: 1.8em;
+    }
+
+    .header {
+        order: 1;
+    }
+
+    .left-aside {
+        flex-basis: 100%;
+        height: 360px;
+        order: 4;
+    }
+
+    .center-aside {
+        flex-basis: 80%;
+        height: 359px;
+        order: 2;
     }
 
     .right-aside {
-        bottom: 465px;
-        height: 386px;
+        height: 359px;
+        order: 3;
+    }
+
+    .footer {
+        order: 5;
     }
 }
 
 @media (max-width:768px) {
 
-    .aside,
-    .left-aside,
-    .right-aside {
-        width: 100%;
-        height: 257px;
+    div {
+        font-size: 1.5em;
     }
 
-    .aside {
-        top: 80px;
-        left: 0%;
-        font-size: 2em;
+    .center-aside {
+        font-size: 1.2em;
+    }
+
+    .center-aside,
+    .left-aside,
+    .right-aside {
+        flex-basis: 100%;
+        height: 239.7px;
+    }
+
+    .header {
+        order: 1;
     }
 
     .left-aside {
-        top: 337px;
+        order: 3;
+    }
+
+    .center-aside {
+        order: 2;
     }
 
     .right-aside {
-        top: 594px;
+        order: 4;
     }
+
+    .footer {
+        order: 5;
+    }
+
+
 }
